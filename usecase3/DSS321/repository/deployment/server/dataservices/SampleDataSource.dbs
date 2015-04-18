@@ -1,0 +1,62 @@
+<data xmlns:svns="http://org.wso2.securevault/configuration" name="SampleDataSource" serviceNamespace="www.wso2.org/dss">
+   <description>arunage blog sample eka                                                                                                </description>
+   <config id="dss_sampleDB">
+      <property name="driverClassName">com.mysql.jdbc.Driver</property>
+      <property name="url">jdbc:mysql://127.0.0.1:3306/dss_sample</property>
+      <property name="username">root</property>
+      <property name="password" svns:secretAlias="yIVpAt6f"/>
+   </config>
+   <query id="getEmployeeByIDQuery" useConfig="dss_sampleDB">
+      <sql>call GetEmployeeByID(?);</sql>
+      <result element="Employees" rowName="Employees">
+         <element column="FirstName" name="FirstNameValue" xsdType="string"/>
+         <element column="LastName" name="LastNameValue" xsdType="string"/>
+         <element column="Team" name="TeamValue" xsdType="string"/>
+      </result>
+      <param name="empID" sqlType="INTEGER"/>
+   </query>
+   <query id="getAllEmployeesQuery" useConfig="dss_sampleDB">
+      <sql>call GetAllEmployees;</sql>
+      <result element="Employees" rowName="Employee">
+         <element column="FirstName" name="FirstNameValue" xsdType="string"/>
+         <element column="LastName" name="LastNameValue" xsdType="string"/>
+         <element column="Team" name="TeamValue" xsdType="string"/>
+      </result>
+   </query>
+   <query id="getAllEmployeesSQLQuery" useConfig="dss_sampleDB">
+      <sql>SELECT FirstName , LastName , Team FROM Employee;</sql>
+      <result element="Employees" rowName="Employee">
+         <element column="FirstName" name="FirstNameValue" xsdType="string"/>
+         <element column="LastName" name="LastNameValue" xsdType="string"/>
+         <element column="Team" name="TeamValue" xsdType="string"/>
+      </result>
+   </query>
+   <query id="addEmployeeQuery" useConfig="dss_sampleDB">
+      <sql>call addEmployee(?,?,?,?)</sql>
+      <param name="EmployeeID" sqlType="INTEGER"/>
+      <param name="FirstName" sqlType="STRING"/>
+      <param name="LastName" sqlType="STRING"/>
+      <param name="Team" sqlType="STRING"/>
+   </query>
+   <operation name="getEmployeeByID">
+      <call-query href="getEmployeeByIDQuery">
+         <with-param name="empID" query-param="empID"/>
+      </call-query>
+   </operation>
+   <operation name="getAllEmployees">
+      <description>Get all the employees in Employees table of dss_sample database                                    </description>
+      <call-query href="getAllEmployeesQuery"/>
+   </operation>
+   <operation name="getAllEmployeesSQL">
+      <description>no stored procedure, raw sql used                                    </description>
+      <call-query href="getAllEmployeesSQLQuery"/>
+   </operation>
+   <operation name="addEmployee">
+      <call-query href="addEmployeeQuery">
+         <with-param name="EmployeeID" query-param="EmployeeID"/>
+         <with-param name="FirstName" query-param="FirstName"/>
+         <with-param name="LastName" query-param="LastName"/>
+         <with-param name="Team" query-param="Team"/>
+      </call-query>
+   </operation>
+</data>

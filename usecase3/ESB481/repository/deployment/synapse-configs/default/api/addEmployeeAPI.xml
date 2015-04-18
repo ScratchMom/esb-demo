@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="addEmployeeAPI"
+     context="/addemployee">
+   <resource methods="GET">
+      <inSequence>
+         <log>
+            <property name="location" expression="json-eval($.EmployeeID)"/>
+         </log>
+         <script language="js">var EmployeeID = mc.getPayloadJSON().EmployeeID.toString();
+                    var FirstName = mc.getPayloadJSON().FirstName.toString();
+                    var LastName = mc.getPayloadJSON().LastName.toString();
+                    var Team = mc.getPayloadJSON().Team.toString();
+                    mc.setPayloadXML(
+                        &lt;p:addEmployee xmlns:p="www.wso2.org/dss"&gt;
+                     &lt;xs:EmployeeID xmlns:xs="www.wso2.org/dss"&gt;{EmployeeID}&lt;/xs:EmployeeID&gt;
+                     &lt;xs:FirstName xmlns:xs="www.wso2.org/dss"&gt;{FirstName}&lt;/xs:FirstName&gt;
+                     &lt;xs:LastName xmlns:xs="www.wso2.org/dss"&gt;{LastName}&lt;/xs:LastName&gt;
+                     &lt;xs:Team xmlns:xs="www.wso2.org/dss"&gt;{Team}&lt;/xs:Team&gt;
+                  &lt;/p:addEmployee&gt;);</script>
+         <log level="custom">
+            <property name="text"
+                      expression="fn:concat('Stock Prize - ',get-property('stock_prize'))"/>
+         </log>
+         <call>
+            <endpoint>
+               <address uri="http://10.100.5.175:9773/services/SampleDataSource/addEmployee"
+                        format="soap12"/>
+            </endpoint>
+         </call>
+         <property name="messageType" value="application/json" scope="axis2"/>
+         <respond/>
+      </inSequence>
+   </resource>
+</api>

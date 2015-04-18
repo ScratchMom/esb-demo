@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="Faultproxy"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <description/>
+   <target>
+      <inSequence>
+         <makefault version="soap11">
+            <code xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"
+                  value="soap11Env:VersionMismatch"/>
+            <reason value="500"/>
+            <role/>
+         </makefault>
+         <respond/>
+      </inSequence>
+   </target>
+</proxy>

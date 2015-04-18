@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="updateStockPriceProxy"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <target>
+      <inSequence>
+         <log level="full" description="Outgoing">
+            <property name="STATUS"
+                      value="***** REQUEST HITS updateStockPriceProxy IN SEQUENCE *****"/>
+         </log>
+         <send>
+            <endpoint name="SSQService">
+               <address uri="http://localhost:9000/services/SimpleStockQuoteService"/>
+            </endpoint>
+         </send>
+      </inSequence>
+      <outSequence>
+         <log description="Incoming">
+            <property name="Text" value="** Reporting to the Database **"/>
+         </log>
+         <dbreport>
+            <connection>
+               <pool>
+                  <password>user123</password>
+                  <user>user</user>
+                  <url>jdbc:mysql://localhost/ESB_SP_SAMPLE</url>
+                  <driver>com.mysql.jdbc.Driver</driver>
+               </pool>
+            </connection>
+            <statement>
+               <sql>call updateCompany(?,?)</sql>
+               <parameter xmlns:m1="http://services.samples/xsd"
+                          xmlns:m0="http://services.samples"
+                          expression="//m0:return/m1:last/child::text()"
+                          type="DOUBLE"/>
+               <parameter xmlns:m1="http://services.samples/xsd"
+                          xmlns:m0="http://services.samples"
+                          expression="//m0:return/m1:symbol/child::text()"
+                          type="VARCHAR"/>
+            </statement>
+         </dbreport>
+         <log level="custom">
+            <property name="text" value="** Looking up from the Database **"/>
+         </log>
+         <dblookup>
+            <connection>
+               <pool>
+                  <password>user123</password>
+                  <user>user</user>
+                  <url>jdbc:mysql://localhost/ESB_SP_SAMPLE</url>
+                  <driver>com.mysql.jdbc.Driver</driver>
+               </pool>
+            </connection>
+            <statement>
+               <sql>call getCompany(?)</sql>
+               <parameter xmlns:m1="http://services.samples/xsd"
+                          xmlns:m0="http://services.samples"
+                          expression="//m0:return/m1:symbol/child::text()"
+                          type="VARCHAR"/>
+               <result name="stock_prize" column="price"/>
+            </statement>
+         </dblookup>
+         <log level="custom">
+            <property name="text"
+                      expression="fn:concat('Stock Prize - ',get-property('stock_prize'))"/>
+         </log>
+         <send/>
+      </outSequence>
+      <faultSequence/>
+   </target>
+</proxy>
