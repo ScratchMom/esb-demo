@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="InOnlyProxy"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <target>
+      <inSequence>
+         <property name="FORCE_SC_ACCEPTED" value="true" scope="axis2"/>
+         <property name="OUT_ONLY" value="true"/>
+         <property name="username"
+                   expression="get-property('registry', 'conf:/custom/username')"
+                   scope="default"
+                   type="STRING"/>
+         <property name="password"
+                   expression="get-property('registry', 'conf:/custom/password')"
+                   scope="default"
+                   type="STRING"/>
+         <class name="org.soasecurity.wssecurity.ut.mediator.UTTokenBuilder"/>
+         <property name="target.endpoint" value="SimpleStockQuoteService"/>
+         <clone>
+            <target>
+               <sequence>
+                  <store messageStore="JMSMS"/>
+               </sequence>
+            </target>
+         </clone>
+      </inSequence>
+   </target>
+</proxy>
