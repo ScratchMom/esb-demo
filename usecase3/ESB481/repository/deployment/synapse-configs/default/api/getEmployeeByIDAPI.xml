@@ -20,15 +20,6 @@
                         format="soap12"/>
             </endpoint>
          </call>
-         <property xmlns:ns1="www.wso2.org/dss"
-                   name="FirstName"
-                   expression="//ns1:return/ns2:FirstName"/>
-         <property xmlns:ns1="www.wso2.org/dss"
-                   name="LastName"
-                   expression="//ns1:return/ns2:LastName"/>
-         <property xmlns:ns1="www.wso2.org/dss"
-                   name="Team"
-                   expression="//ns1:return/ns2:Team"/>
          <property name="messageType" value="application/json" scope="axis2"/>
          <respond/>
       </inSequence>
