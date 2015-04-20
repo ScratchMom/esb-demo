@@ -4,6 +4,7 @@
        transports="https http"
        startOnLoad="true"
        trace="disable">
+   <description/>
    <target>
       <inSequence>
          <property name="FORCE_SC_ACCEPTED" value="true" scope="axis2"/>
@@ -17,14 +18,11 @@
                    scope="default"
                    type="STRING"/>
          <class name="org.soasecurity.wssecurity.ut.mediator.UTTokenBuilder"/>
+         <header name="Authorization"
+                 scope="transport"
+                 expression="get-property('Authorization')"/>
          <property name="target.endpoint" value="SimpleStockQuoteService"/>
-         <clone>
-            <target>
-               <sequence>
-                  <store messageStore="JMSMS"/>
-               </sequence>
-            </target>
-         </clone>
+         <store messageStore="JMSMS"/>
       </inSequence>
    </target>
 </proxy>

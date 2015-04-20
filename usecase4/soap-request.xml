@@ -1,0 +1,15 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.samples" xmlns:xsd="http://services.samples/xsd">
+   <soapenv:Header>
+   <m:Trans xmlns:m="http://www.w3schools.com/transaction/">234</m:Trans>
+   </soapenv:Header>
+                               
+   <soapenv:Body>
+      <ser:getQuote>
+         <!--Optional:-->
+         <ser:request>
+            <!--Optional:-->
+            <xsd:symbol>IBM</xsd:symbol>
+         </ser:request>
+      </ser:getQuote>
+   </soapenv:Body>
+</soapenv:Envelope>
