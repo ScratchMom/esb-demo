@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="smallsqlproxy"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <description/>
+   <target>
+      <inSequence>
+         <payloadFactory media-type="xml">
+            <format>
+               <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                                 xmlns:p="www.wso2.org/dss">
+                  <soapenv:Body>
+                     <p:getEmployeeByID>
+                        <p:empID>101</p:empID>
+                     </p:getEmployeeByID>
+                  </soapenv:Body>
+               </soapenv:Envelope>
+            </format>
+            <args/>
+         </payloadFactory>
+         <send>
+            <endpoint>
+               <address uri="http://10.100.5.175:9773/services/SampleDataSource"/>
+            </endpoint>
+         </send>
+      </inSequence>
+      <outSequence>
+         <log level="full"/>
+         <send/>
+      </outSequence>
+      <faultSequence/>
+   </target>
+</proxy>
