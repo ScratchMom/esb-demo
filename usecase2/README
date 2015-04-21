@@ -1,0 +1,20 @@
+Steps to setup AppServer:
+
+1.Start the server with offset 10. 
+2.Deploy DealInfo_1.0.0.aar and VehicleDetails_1.0.0.aar in services directory. 
+
+Steps to setup MB:
+
+1.Start the server with offset 2. 
+2.Create a queue with queue name testQueue.
+3.Send 2 or 3 messages to that queue. Text message content should be "<q:VIN>1234567<q:VIN><q:DEALER>suburban<q:DEALER>". Set correlation ID as well to the message.
+Sample client code can be found in QueueSender.java to send messages. 
+
+Steps to setup ESB: 
+
+1. Replace synapse-configs with <ESB_Home>/repository/deployment/server/synapse-configs
+2. Copy jar files in lib directory to <ESB_HOME>/repositoy/components/lib directory. 
+3. Start the server with default offset. 
+
+ 
+
