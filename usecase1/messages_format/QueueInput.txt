@@ -1,0 +1,8 @@
+<env:Envelope>
+   <env:Body>
+      <urn:Response>
+	<urn:elementA>PQR</urn:elementA>
+	<urn:elementB>ZYZ</urn:elementB>
+      </urn:Response>
+   </env:Body>
+</env:Envelope>

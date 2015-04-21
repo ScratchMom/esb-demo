@@ -1,0 +1,13 @@
+<env:Envelope>
+   <env:Header>
+      <wsse:Security>
+         <wsse:UsernameToken>
+            <wsse:Username>USER</wsse:Username>
+            <wsse:Password>PASS</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </env:Header>
+   <env:Body>
+      <urn:Request>A|B|C|D|E|F</urn:Request>
+   </env:Body>
+</env:Envelope>
