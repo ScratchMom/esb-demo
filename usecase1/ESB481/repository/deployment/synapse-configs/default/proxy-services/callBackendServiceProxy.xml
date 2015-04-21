@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="callBackendServiceProxy"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <description/>
+   <target>
+      <endpoint>
+         <address uri="http://localhost:9000/services/BackendService"/>
+      </endpoint>
+      <outSequence>
+         <class name="org.wso2.sample.mediator.SimpleClassMediator">
+            <property name="splitLength" value="3"/>
+         </class>
+         <send/>
+      </outSequence>
+   </target>
+</proxy>

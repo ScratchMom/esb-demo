@@ -1,0 +1,10 @@
+<service name="BackendService"> 
+<Description> 
+This is a sample aar service used to return a string based on a particular string
+</Description> 
+<messageReceivers> 
+<messageReceiver mep="http://www.w3.org/2006/01/wsdl/in-out" 
+class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/> 
+</messageReceivers> 
+<parameter name="ServiceClass" locked="false">org.wso2.esb.BackendService</parameter>        
+</service>
