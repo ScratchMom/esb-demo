@@ -1,0 +1,1 @@
+curl -v -k -H "Authorization: Basic YWRtaW46YWRtaW4=" -H "username: admin" -H "Content-Type:application/json" -X POST -d '{"symbol":"IBM"}' https://localhost:8243/stockquote/view

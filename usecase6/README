@@ -1,0 +1,18 @@
+Steps to set-up ESB 1:
+
+1.copy jar files in ESB1/lib directory to <ESB1_HOME>/repository/component/lib folder 
+2.copy and replace master-datasource.xml file in ESB1 directory to <ESB1_HOME>/repository/conf/datasources
+3.create a user_details database in mysql dataabse with two columns namely USER_NAME and USER_PASSWORD. add one entry there as below. 
+---------------------------------------
+|USER_NAME | USER_PASSWORD |
+|          |               |
+----------------------------
+| admin    |  admin        |
+|          |               |
+----------------------------  
+3.Start the ESB1 node and deploy StockQuoteAPI_1.0.0.car.
+
+
+Steps to set-up ESB2: 
+
+1. start the server and deploy SecureProxy_1.0.0.car
