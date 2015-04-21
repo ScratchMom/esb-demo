@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="SecureSimpleStockQuote"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <target>
+      <inSequence>
+         <header xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                 name="wsse:Security"
+                 action="remove"/>
+         <log level="full"/>
+         <property xmlns:m0="http://services.samples"
+                   name="correlationId"
+                   expression="$body/m0:CorrelationID"/>
+         <clone>
+            <target>
+               <sequence>
+                  <payloadFactory media-type="xml">
+                     <format>
+                        <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+                                       xmlns:xsd="http://services.samples/xsd"
+                                       xmlns:ser="http://services.samples">
+                           <soap:Body>
+                              <p:getDealInfo xmlns:p="http://information.deal.com">
+                                 <xs:value xmlns:xs="http://information.deal.com">$1</xs:value>
+                              </p:getDealInfo>
+                           </soap:Body>
+                        </soap:Envelope>
+                     </format>
+                     <args>
+                        <arg value="surban"/>
+                     </args>
+                  </payloadFactory>
+                  <property name="SOAPAction" value="getDealInfo" scope="transport"/>
+                  <log level="full"/>
+                  <send>
+                     <endpoint name="DealInfoService">
+                        <address uri="http://localhost:9773/services/DealInfoService/"/>
+                     </endpoint>
+                  </send>
+               </sequence>
+            </target>
+            <target>
+               <sequence>
+                  <payloadFactory media-type="xml">
+                     <format>
+                        <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+                                       xmlns:xsd="http://services.samples/xsd"
+                                       xmlns:ser="http://services.samples">
+                           <soap:Body>
+                              <p:getVehicleDetails xmlns:p="http://details.vehicle.com">
+                                 <xs:value xmlns:xs="http://details.vehicle.com">$1</xs:value>
+                              </p:getVehicleDetails>
+                           </soap:Body>
+                        </soap:Envelope>
+                     </format>
+                     <args>
+                        <arg value="1234"/>
+                     </args>
+                  </payloadFactory>
+                  <property name="SOAPAction" value="getVehicleDetails" scope="transport"/>
+                  <log level="full"/>
+                  <send>
+                     <endpoint name="VehicleDetailsService">
+                        <address uri="http://localhost:9773/services/VehicleDetailsService/"/>
+                     </endpoint>
+                  </send>
+               </sequence>
+            </target>
+         </clone>
+      </inSequence>
+      <outSequence>
+         <log level="full"/>
+         <aggregate>
+            <completeCondition>
+               <messageCount/>
+            </completeCondition>
+            <onComplete xmlns:s12="http://www.w3.org/2003/05/soap-envelope"
+                        expression="/s12:Envelope/s12:Body/child::*[position()=1]">
+               <send/>
+            </onComplete>
+         </aggregate>
+      </outSequence>
+      <faultSequence/>
+   </target>
+   <policy key="conf:/policy/UTOverTransport.xml"/>
+   <enableSec/>
+</proxy>

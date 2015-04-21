@@ -1,0 +1,9 @@
+Steps to setup ESB:
+
+1.Copy jndi.properties file to <ESB_HOME>/repository/conf
+2.Copy geronimo-jms_1.1_spec-1.1.0.wso2v1.jar and andes-client-0.13.wso2v10.jar in <MB_HOME>client-lib to <ESB_HOME>/repository/components/lib
+3.Start the server and deploy UseCase4CarFile_1.0.0.car
+
+Steps to setup MB:
+
+1.Start server with offset 2. 
