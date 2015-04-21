@@ -9,8 +9,7 @@
    </soapenv:Header>
    <soapenv:Body>
       <esb:serviceMethod>
-         <!--Optional:-->
-         <esb:args0>ABCDEF</esb:args0>
+         <esb:args0>A|B|C|D|E|F</esb:args0>
       </esb:serviceMethod>
    </soapenv:Body>
 </soapenv:Envelope>
