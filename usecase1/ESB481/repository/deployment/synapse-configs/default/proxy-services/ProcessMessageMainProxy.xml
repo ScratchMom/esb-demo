@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <proxy xmlns="http://ws.apache.org/ns/synapse"
        name="ProcessMessageMainProxy"
-       transports="https"
+       transports="https http"
        startOnLoad="true"
        trace="disable">
    <description/>
@@ -35,9 +35,4 @@
          </send>
       </outSequence>
    </target>
-   <policy key="conf:/repository/axis2/service-groups/ProcessMessageMainProxy/services/ProcessMessageMainProxy/policies/policyFromRegistry"/>
-   <parameter name="disableREST">true</parameter>
-   <parameter name="ScenarioID">policyFromRegistry</parameter>
-   <parameter name="secPolicyRegistryPath">conf:/policy/UTOverTransport.xml</parameter>
-   <enableSec/>
 </proxy>
