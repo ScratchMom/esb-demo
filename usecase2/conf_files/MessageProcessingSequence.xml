@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence xmlns="http://ws.apache.org/ns/synapse"
+          name="conf:sequences/MessageProcessingSequence">
+   <payloadFactory media-type="xml">
+      <format>
+         <env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+                       xmlns:e1="http://org.vehicle.com"
+                       xmlns:e2="http://org.dealer.com">
+            <env:Body>
+               <Response>
+                  <Dealer>
+                     <e2:DEALER>$1</e2:DEALER>
+                     <e2:APR>$2</e2:APR>
+                     <e2:DATE>$3</e2:DATE>
+                  </Dealer>
+                  <Vehicle>
+                     <e1:VIN>$4</e1:VIN>
+                     <e1:MAKE>$5</e1:MAKE>
+                     <e1:MODEL>$6</e1:MODEL>
+                     <e1:YEAR>$7</e1:YEAR>
+                  </Vehicle>
+               </Response>
+            </env:Body>
+         </env:Envelope>
+      </format>
+      <args>
+         <arg xmlns:m0="http://information.deal.com/xsd"
+              expression="//m0:dealer"
+              evaluator="xml"/>
+         <arg xmlns:m0="http://information.deal.com/xsd"
+              expression="//m0:APR"
+              evaluator="xml"/>
+         <arg xmlns:m0="http://information.deal.com/xsd"
+              expression="//m0:date"
+              evaluator="xml"/>
+         <arg xmlns:m0="http://details.vehicle.com/xsd"
+              expression="//m0:VIN"
+              evaluator="xml"/>
+         <arg xmlns:m0="http://details.vehicle.com/xsd"
+              expression="//m0:make"
+              evaluator="xml"/>
+         <arg xmlns:m0="http://details.vehicle.com/xsd"
+              expression="//m0:model"
+              evaluator="xml"/>
+         <arg xmlns:m0="http://details.vehicle.com/xsd"
+              expression="//m0:year"
+              evaluator="xml"/>
+      </args>
+   </payloadFactory>
+</sequence>

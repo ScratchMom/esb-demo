@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="VehicleDetailsProxy"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <description/>
+   <target>
+      <inSequence>
+         <header xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                 name="wsse:Security"
+                 action="remove"/>
+         <log level="full"/>
+         <property xmlns:m0="http://services.samples"
+                   name="correlationId"
+                   expression="$body/m0:CorrelationID"/>
+         <class name="org.mb.correationid.mediator.CorrelationIdMatcher"/>
+         <clone>
+            <target>
+               <sequence>
+                  <sequence key="conf:/sequences/DealInfoServiceInvocationSequence"/>
+               </sequence>
+            </target>
+            <target>
+               <sequence>
+                  <sequence key="conf:/sequences/VehicleDetailsServiceInvocationSequence"/>
+               </sequence>
+            </target>
+         </clone>
+      </inSequence>
+      <outSequence>
+         <aggregate>
+            <completeCondition>
+               <messageCount/>
+            </completeCondition>
+            <onComplete xmlns:s12="http://www.w3.org/2003/05/soap-envelope"
+                        expression="/s12:Envelope/s12:Body/child::*[position()=1]">
+               <log level="full"/>
+               <sequence key="conf:/sequences/MessageProcessingSequence"/>
+               <send/>
+            </onComplete>
+         </aggregate>
+      </outSequence>
+      <faultSequence/>
+   </target>
+</proxy>

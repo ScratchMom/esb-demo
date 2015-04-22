@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence xmlns="http://ws.apache.org/ns/synapse"
+          name="conf:sequences/VehicleDetailsServiceInvocationSequence">
+   <payloadFactory media-type="xml">
+      <format>
+         <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+                        xmlns:xsd="http://services.samples/xsd"
+                        xmlns:ser="http://services.samples">
+            <soap:Body>
+               <p:getVehicleDetails xmlns:p="http://details.vehicle.com">
+                  <xs:value xmlns:xs="http://details.vehicle.com">$1</xs:value>
+               </p:getVehicleDetails>
+            </soap:Body>
+         </soap:Envelope>
+      </format>
+      <args>
+         <arg expression="get-property('VIN')" evaluator="xml"/>
+      </args>
+   </payloadFactory>
+   <log level="full"/>
+   <send>
+      <endpoint key="conf:endpoints/VehicleDetailsServiceEndpoint"/>
+   </send>
+</sequence>
