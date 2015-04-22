@@ -8,7 +8,6 @@ Port offset 0
 
 1. [Optional step]
 If you are running demo files on Mac OS X
-
 Copy the libsnappyjava.jnilib file to [MB_HOME] from snappy-1.1.1-Mac-x86_64 folder.
 
 2. Copy other necessary configuration files
@@ -18,6 +17,7 @@ Copy the libsnappyjava.jnilib file to [MB_HOME] from snappy-1.1.1-Mac-x86_64 fol
 4. Login to admin console
 
 5. Create 3 Queues as follows in WSO2 MB 2.2.0
+
 * javaVendor
 * otherVendor
 * UC7_QueueListnerProxy
