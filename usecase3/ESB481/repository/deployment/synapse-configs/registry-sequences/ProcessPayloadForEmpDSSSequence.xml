@@ -1,16 +1,19 @@
-<sequence xmlns="http://ws.apache.org/ns/synapse">
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence xmlns="http://ws.apache.org/ns/synapse"
+          name="conf:ProcessPayloadForEmpDSSSequence">
+   <oauthService remoteServiceUrl="https://localhost:9444/services" username="admin" password="admin"></oauthService>
    <payloadFactory media-type="xml">
       <format>
-         <p:insert_Employee_operation xmlns:p="http://employees.allyfinancial.com">            
-            <xs:FirstName xmlns:xs="http://employees.allyfinancial.com">$1</xs:FirstName>            
-            <xs:LastName xmlns:xs="http://employees.allyfinancial.com">$2</xs:LastName>            
-            <xs:Team xmlns:xs="http://employees.allyfinancial.com">$3</xs:Team>         
+         <p:insert_Employee_operation xmlns:p="http://employees.allyfinancial.com">
+            <xs:FirstName xmlns:xs="http://employees.allyfinancial.com">$1</xs:FirstName>
+            <xs:LastName xmlns:xs="http://employees.allyfinancial.com">$2</xs:LastName>
+            <xs:Team xmlns:xs="http://employees.allyfinancial.com">$3</xs:Team>
          </p:insert_Employee_operation>
       </format>
       <args>
-         <arg expression="$.employee.firstName" evaluator="json"></arg>
-         <arg expression="$.employee.lastName" evaluator="json"></arg>
-         <arg expression="$.employee.team" evaluator="json"></arg>
+         <arg expression="$.employee.firstName" evaluator="json"/>
+         <arg expression="$.employee.lastName" evaluator="json"/>
+         <arg expression="$.employee.team" evaluator="json"/>
       </args>
    </payloadFactory>
 </sequence>

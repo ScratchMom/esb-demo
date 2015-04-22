@@ -15,7 +15,4 @@
          <respond/>
       </inSequence>
    </resource>
-   <handlers>
-      <handler class="org.wso2.handler.SimpleOauthHandler"/>
-   </handlers>
 </api>
