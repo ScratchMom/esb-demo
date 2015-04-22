@@ -1,6 +1,14 @@
 Use Case 3 - Instructions
 =========================
 
+Products used
+-------------
+WSO2 Enterprise Service Bus 4.8.1
+WSO2 Data Services Server 3.2.1
+WSO2 Identity Server 5.0.0
+
+MySQL
+
 MySQL Database configuration
 ----------------------------
 Install MySQL database locally and run MySQL/script.sql to create database and tables
@@ -44,7 +52,7 @@ project (usecase3-soapui-project.xml)
 
 e.g.: Bearer e3443b37211e299be2c8f3aee7f73519
 
-WSO2 ESB 4.8.1 - Configurations
+WSO2 Enterprise Service Bus 4.8.1 - Configurations
 -------------------------------
 Create the two sequences and add them to the registry
 as per the repository/deployment/synapse-configs/registry-sequences
