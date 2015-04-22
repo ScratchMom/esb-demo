@@ -1,8 +1,7 @@
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.samples" xmlns:xsd="http://services.samples/xsd">
-   <soapenv:Header>
+    <soapenv:Header>
    <m:Trans xmlns:m="http://www.w3schools.com/transaction/">234</m:Trans>
    </soapenv:Header>
-                               
    <soapenv:Body>
       <ser:getQuote>
          <!--Optional:-->
