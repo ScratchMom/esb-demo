@@ -17,3 +17,9 @@ Steps to set-up AppServer:
 
 1. start the Application Server with offset 10. 
 2.Deploy SimpleStockQuoteService.aar file and mamke it secured using basic authentication. 
+
+Test:
+
+1.Run using the curl command, 
+
+curl -v -k -H "Authorization: Basic YWRtaW46YWRtaW4=" -H "username: admin" -H "Content-Type:application/json" -X POST -d '{"symbol":"IBM"}' https://localhost:8243/stockquote/view

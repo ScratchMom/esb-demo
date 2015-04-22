@@ -11,3 +11,7 @@ Steps to setup MB:
 Steps to setup AppServer:
 
 1.Deploy SimpleStockQuoteService.aar and secure it using Basic authentication. 
+
+Test:
+
+Send a Soap request to the ESB using the soap request given in soap-request.xml
