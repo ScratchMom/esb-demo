@@ -9,8 +9,13 @@
       <endpoint>
          <address uri="http://localhost:9000/services/BackendService"/>
       </endpoint>
+      <inSequence>
+         <class name="org.wso2.sample.mediator.MessagePreProcessor">
+            <property name="separator" value="|"/>
+         </class>
+      </inSequence>
       <outSequence>
-         <class name="org.wso2.sample.mediator.SimpleClassMediator">
+         <class name="org.wso2.sample.mediator.MessagePostProcessor">
             <property name="splitLength" value="3"/>
          </class>
          <send/>

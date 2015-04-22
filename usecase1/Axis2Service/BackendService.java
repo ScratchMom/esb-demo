@@ -12,7 +12,7 @@ public class BackendService {
         }
         else{
             var = "PQRXYZ";
-            System.out.println("Invalid Input received by BackendService: "+inputString);
+            System.out.println("Expected Input received by BackendService: "+inputString);
         }
 		return var;
 	}

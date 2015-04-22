@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="synapse-core_2.1.2.wso2v2">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../wso2esb-4.8.0/repository/components/plugins/synapse-core_2.1.2.wso2v2.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

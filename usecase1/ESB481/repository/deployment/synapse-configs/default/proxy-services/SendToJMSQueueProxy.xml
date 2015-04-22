@@ -11,7 +11,7 @@
          <property name="FORCE_SC_ACCEPTED" value="true" scope="axis2"/>
          <send>
             <endpoint>
-               <address uri="jms:/jmsProxy?transport.jms.ConnectionFactoryJNDIName=QueueConnectionFactory&amp;java.naming.factory.initial=org.apache.activemq.jndi.ActiveMQInitialContextFactory&amp;java.naming.provider.url=tcp://127.0.0.1:61616&amp;transport.jms.DestinationType=queue"/>
+               <address uri="jms:/messageQueue?transport.jms.ConnectionFactoryJNDIName=QueueConnectionFactory&amp;java.naming.factory.initial=org.wso2.andes.jndi.PropertiesFileInitialContextFactory&amp;java.naming.provider.url=repository/conf/jndi.properties&amp;transport.jms.DestinationType=queue"/>
             </endpoint>
          </send>
       </inSequence>
