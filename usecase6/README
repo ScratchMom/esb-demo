@@ -1,4 +1,4 @@
-Steps to set-up ESB 1:
+Steps to set-up ESB:
 
 1.copy jar files in ESB1/lib directory to <ESB1_HOME>/repository/component/lib folder 
 2.copy and replace master-datasource.xml file in ESB1 directory to <ESB1_HOME>/repository/conf/datasources
@@ -10,9 +10,10 @@ Steps to set-up ESB 1:
 | admin    |  admin        |
 |          |               |
 ----------------------------  
-3.Start the ESB1 node and deploy StockQuoteAPI_1.0.0.car.
+3.Start the ESB1 node and deploy RestToSoapAPI_1.0.0.car.
 
 
-Steps to set-up ESB2: 
+Steps to set-up AppServer: 
 
-1. start the server and with offset 1 and deploy SecureProxy_1.0.0.car
+1. start the Application Server with offset 10. 
+2.Deploy SimpleStockQuoteService.aar file and mamke it secured using basic authentication. 
