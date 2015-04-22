@@ -43,10 +43,11 @@ Locate UC7_QueueListnerProxy and click on Publish messages
 Send the messages to queue UC7_QueueListnerProxy as follows.
 * Set the Number of Messages, e.g.: 2
 * Set the message body, e.g.:
-
+* 
+```
 <m:getQuote xmlns:m="http://services.samples">
     <m:request>
         <m:symbol>IBM</m:symbol>
     </m:request>
 </m:getQuote>
-
+```
