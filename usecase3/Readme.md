@@ -9,13 +9,13 @@ WSO2 Data Services Server 3.2.1 Configuration
 ---------------------------------------------
 Create a datasource as follows.
 
-Data Source Type: RDBMS
-Name: EmployeeDataSource
-Data Source Provider: default
-Driver: com.mysql.jdbc.Driver
-URL: jdbc:mysql://localhost:3306/dss_sample
-UserName: root
-UserName: rootPassword
+Data Source Type: RDBMS  
+Name: EmployeeDataSource  
+Data Source Provider: default  
+Driver: com.mysql.jdbc.Driver  
+URL: jdbc:mysql://localhost:3306/dss_sample  
+UserName: root  
+UserName: rootPassword  
 
 Create a data service as per the EmployeesDataService.dbs configuration
 
