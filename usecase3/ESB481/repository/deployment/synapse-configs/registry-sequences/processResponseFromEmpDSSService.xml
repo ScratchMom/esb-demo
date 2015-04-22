@@ -1,6 +1,7 @@
 <sequence xmlns="http://ws.apache.org/ns/synapse">
+   <log></log>
    <payloadFactory media-type="json">
-      <format>                {"Server Response":{"Employee":{"Employee ID":$1}}}            </format>
+      <format>                {"EmployeeRecord":{"EmployeeID":$1, "Status":"Successfully created"}}            </format>
       <args>
          <arg expression="$.GeneratedKeys.Entry.ID" evaluator="json"></arg>
       </args>
