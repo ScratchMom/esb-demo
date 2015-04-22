@@ -16,5 +16,10 @@ Steps to setup ESB:
 2. Copy jar files in lib directory to <ESB_HOME>/repositoy/components/lib directory. 
 3. Start the server with default offset. 
 
+
+Test:
+
+1.Send few messages to a queue named testQueue.
+2.Send a soap request to the ESB using the soap request given in soap_request.xml
  
 
