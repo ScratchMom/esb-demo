@@ -1,6 +1,7 @@
 Steps to setup ESB:
 
 1.Copy jndi.properties file to <ESB_HOME>/repository/conf
+2.Copy and replace given axis2.xml with <ESB_HOME>/repository/conf/axis2/axis2.xml
 2.Copy jar files in lib directory to <ESB_HOME>/repository/components/lib
 3.Start the server and deploy MessageStoreProcessorCar_1.0.0.car
 
