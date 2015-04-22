@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="OrganizationalInfoAPI"
+     context="/allyinternal">
+   <resource methods="POST" uri-template="/employees">
+      <inSequence>
+         <sequence key="conf:/ProcessPayloadForEmpDSSSequence"/>
+         <call>
+            <endpoint>
+               <address uri="http://10.100.5.175:9773/services/EmployeesDataService"
+                        format="soap12"/>
+            </endpoint>
+         </call>
+         <sequence key="conf:/processResponseFromEmpDSSService"/>
+         <respond/>
+      </inSequence>
+   </resource>
+</api>

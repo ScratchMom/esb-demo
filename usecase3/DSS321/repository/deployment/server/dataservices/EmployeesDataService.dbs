@@ -1,0 +1,72 @@
+<data name="EmployeesDataService" serviceNamespace="http://employees.allyfinancial.com">
+   <config id="default">
+      <property name="carbon_datasource_name">EmployeeDataSource</property>
+   </config>
+   <query id="select_all_Employee_query" useConfig="default">
+      <sql>SELECT EmployeeID, FirstName, LastName, Team FROM Employee</sql>
+      <result element="EmployeeCollection" rowName="Employee">
+         <element column="EmployeeID" name="EmployeeID" xsdType="xs:integer"/>
+         <element column="FirstName" name="FirstName" xsdType="xs:string"/>
+         <element column="LastName" name="LastName" xsdType="xs:string"/>
+         <element column="Team" name="Team" xsdType="xs:string"/>
+      </result>
+   </query>
+   <query id="update_Employee_query" useConfig="default">
+      <sql>UPDATE Employee SET FirstName=?,LastName=?,Team=? WHERE EmployeeID=?</sql>
+      <param name="FirstName" ordinal="1" sqlType="STRING"/>
+      <param name="LastName" ordinal="2" sqlType="STRING"/>
+      <param name="Team" ordinal="3" sqlType="STRING"/>
+      <param name="EmployeeID" ordinal="4" sqlType="INTEGER"/>
+   </query>
+   <query id="select_with_key_Employee_query" useConfig="default">
+      <sql>SELECT EmployeeID, FirstName, LastName, Team FROM Employee WHERE EmployeeID=?</sql>
+      <result element="EmployeeCollection" rowName="Employee">
+         <element column="EmployeeID" name="EmployeeID" xsdType="xs:integer"/>
+         <element column="FirstName" name="FirstName" xsdType="xs:string"/>
+         <element column="LastName" name="LastName" xsdType="xs:string"/>
+         <element column="Team" name="Team" xsdType="xs:string"/>
+      </result>
+      <param name="EmployeeID" ordinal="1" sqlType="INTEGER"/>
+   </query>
+   <query id="delete_Employee_query" useConfig="default">
+      <sql>DELETE FROM Employee WHERE EmployeeID=?</sql>
+      <param name="EmployeeID" ordinal="1" sqlType="INTEGER"/>
+   </query>
+   <query id="insert_Employee_query" returnGeneratedKeys="true" useConfig="default">
+      <sql>INSERT INTO Employee(FirstName,LastName,Team) VALUES(?,?,?)</sql>
+      <result element="GeneratedKeys" rowName="Entry" useColumnNumbers="true">
+         <element column="1" name="ID" xsdType="integer"/>
+      </result>
+      <param name="FirstName" ordinal="1" sqlType="STRING"/>
+      <param name="LastName" ordinal="2" sqlType="STRING"/>
+      <param name="Team" ordinal="3" sqlType="STRING"/>
+   </query>
+   <operation name="update_Employee_operation">
+      <call-query href="update_Employee_query">
+         <with-param name="EmployeeID" query-param="EmployeeID"/>
+         <with-param name="FirstName" query-param="FirstName"/>
+         <with-param name="Team" query-param="Team"/>
+         <with-param name="LastName" query-param="LastName"/>
+      </call-query>
+   </operation>
+   <operation name="select_all_Employee_operation">
+      <call-query href="select_all_Employee_query"/>
+   </operation>
+   <operation name="insert_Employee_operation">
+      <call-query href="insert_Employee_query">
+         <with-param name="FirstName" query-param="FirstName"/>
+         <with-param name="Team" query-param="Team"/>
+         <with-param name="LastName" query-param="LastName"/>
+      </call-query>
+   </operation>
+   <operation name="delete_Employee_operation">
+      <call-query href="delete_Employee_query">
+         <with-param name="EmployeeID" query-param="EmployeeID"/>
+      </call-query>
+   </operation>
+   <operation name="select_with_key_Employee_operation">
+      <call-query href="select_with_key_Employee_query">
+         <with-param name="EmployeeID" query-param="EmployeeID"/>
+      </call-query>
+   </operation>
+</data>

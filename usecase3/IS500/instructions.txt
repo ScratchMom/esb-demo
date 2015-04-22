@@ -11,6 +11,12 @@ https://docs.wso2.com/display/ESB481/Securing+APIs#SecuringAPIs-UsinganOAuthbase
 
 > curl -v -k -X POST --user dT5XgvH7sm_ryIJXce9j281mezYa:LJzBSzwkUAziq_sKelBg8odRUzMa -H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" -d 'grant_type=password&username=admin&password=admin' https://localhost:9444/oauth2/token
 
-5. calling the Rest API
+You will get a response as follows.
 
-curl -v -X GET -H "Authorization: Bearer ec7fb2c94873f641db41e8b6404ae743" http://localhost:8280/customer/101
+{"token_type":"bearer","expires_in":3599999700,"refresh_token":"3662fae89f3bf7e5e1f912933a3191e3","access_token":"e3443b37211e299be2c8f3aee7f73519"}
+
+Extract the access_token part i.e. e3443b37211e299be2c8f3aee7f73519
+which is to be past in the Header -> Authorization header value field of the SOAP UI
+project usecase3-soapui-project.xml
+
+e.g.: Bearer e3443b37211e299be2c8f3aee7f73519
