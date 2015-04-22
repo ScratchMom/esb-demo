@@ -6,4 +6,4 @@ Data Source Provider: default
 Driver: com.mysql.jdbc.Driver  
 URL: jdbc:mysql://localhost:3306/dss_sample  
 UserName: root  
-UserName: <root password>  
+UserName: rootPassword  
