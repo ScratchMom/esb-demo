@@ -3,9 +3,9 @@ Use Case 3 - Instructions
 
 Products used
 -------------
-WSO2 Enterprise Service Bus 4.8.1
-WSO2 Data Services Server 3.2.1
-WSO2 Identity Server 5.0.0
+* WSO2 Enterprise Service Bus 4.8.1   
+* WSO2 Data Services Server 3.2.1   
+* WSO2 Identity Server 5.0.0   
 
 MySQL
 
