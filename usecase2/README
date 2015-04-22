@@ -12,7 +12,7 @@ Sample client code can be found in QueueSender.java to send messages.
 
 Steps to setup ESB: 
 
-1. Replace synapse-configs with <ESB_Home>/repository/deployment/server/synapse-configs
+1. Replace synapse-configs with <ESB_Home>/repository/deployment/server/synapse-configs.Create necessary registry files. 
 2. Copy jar files in lib directory to <ESB_HOME>/repositoy/components/lib directory. 
 3. Start the server with default offset. 
 
