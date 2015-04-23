@@ -1,0 +1,10 @@
+<sequence xmlns="http://ws.apache.org/ns/synapse">
+   <class name="org.wso2.sample.mediator.MessagePreProcessor">
+      <axis2ns8:property xmlns:axis2ns8="http://ws.apache.org/ns/synapse" name="separator" value="|"></axis2ns8:property>
+   </class>
+   <send>
+      <endpoint>
+         <address uri="http://localhost:9000/services/BackendService"></address>
+      </endpoint>
+   </send>
+</sequence>

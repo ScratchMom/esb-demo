@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <proxy xmlns="http://ws.apache.org/ns/synapse"
-       name="SendToJMSQueueProxy"
-       transports="http"
+       name="UC1_MessageProcessorAndQueue"
+       transports="https"
        startOnLoad="true"
        trace="disable">
    <description/>
    <target>
       <inSequence>
-         <property name="OUT_ONLY" value="true"/>
          <property name="FORCE_SC_ACCEPTED" value="true" scope="axis2"/>
+         <sequence key="conf:/BackendServiceMsgProcessorSequence"/>
+      </inSequence>
+      <outSequence>
+         <sequence key="conf:/PayloadProcessorSequence"/>
          <send>
             <endpoint>
                <address uri="jms:/messageQueue?transport.jms.ConnectionFactoryJNDIName=QueueConnectionFactory&amp;java.naming.factory.initial=org.wso2.andes.jndi.PropertiesFileInitialContextFactory&amp;java.naming.provider.url=repository/conf/jndi.properties&amp;transport.jms.DestinationType=queue"/>
             </endpoint>
          </send>
-      </inSequence>
+      </outSequence>
    </target>
+   <policy key="conf:/repository/axis2/service-groups/UC1_MessageProcessorAndQueue/services/UC1_MessageProcessorAndQueue/policies/policyFromRegistry"/>
+   <parameter name="disableREST">true</parameter>
+   <parameter name="ScenarioID">policyFromRegistry</parameter>
+   <parameter name="secPolicyRegistryPath">conf:/policy/UTOverTransport.xml</parameter>
+   <enableSec/>
 </proxy>

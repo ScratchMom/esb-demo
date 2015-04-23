@@ -1,0 +1,21 @@
+<sequence xmlns="http://ws.apache.org/ns/synapse">
+   <class name="org.wso2.sample.mediator.MessagePostProcessor">
+      <axis2ns9:property xmlns:axis2ns9="http://ws.apache.org/ns/synapse" name="splitLength" value="3"></axis2ns9:property>
+   </class>
+   <log level="custom">
+      <property xmlns:ns="http://org.apache.synapse/xsd" xmlns:m0="http://esb.wso2.org" name="elementA" expression="//m0:elementA"></property>
+      <property xmlns:ns="http://org.apache.synapse/xsd" xmlns:m0="http://esb.wso2.org" name="elementB" expression="//m0:elementB"></property>
+   </log>
+   <payloadFactory media-type="xml">
+      <format>
+         <urn:Response xmlns:urn="http://esb.wso2.org">            
+            <urn:elementA>$1</urn:elementA>            
+            <urn:elementB>$2</urn:elementB>         
+         </urn:Response>
+      </format>
+      <args>
+         <arg xmlns:ns="http://org.apache.synapse/xsd" xmlns:m0="http://esb.wso2.org" expression="//m0:elementA" evaluator="xml"></arg>
+         <arg xmlns:ns="http://org.apache.synapse/xsd" xmlns:m0="http://esb.wso2.org" expression="//m0:elementB" evaluator="xml"></arg>
+      </args>
+   </payloadFactory>
+</sequence>
