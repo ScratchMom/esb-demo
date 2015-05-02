@@ -96,7 +96,7 @@ e.g.: Bearer ```e3443b37211e299be2c8f3aee7f73519```
 
 WSO2 Enterprise Service Bus 4.8.1 - Configurations
 -------------------------------
-* Create the two sequences as per [ProcessPayloadForEmpDSSSequence.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/ProcessPayloadForEmpDSSSequence.xml) and [processResponseFromEmpDSSService.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/processResponseFromEmpDSSService.xml) and add them to the registry  
+* Create the two sequences as per [ProcessPayloadForEmpDSSSequence.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/ProcessPayloadForEmpDSSSequence.xml) and [ProcessResponseFromEmpDSSService.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/ProcessResponseFromEmpDSSService.xml) and add them to the registry  
 
 * Create the API as per [OrganizationalInfoAPI.xml](ESB481/repository/deployment/synapse-configs/default/api/OrganizationalInfoAPI.xml)
 
