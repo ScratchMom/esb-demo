@@ -58,7 +58,7 @@ WSO2 Enterprise Service Bus 4.8.1 - Configurations
 -------------------------------
 Create the two sequences as per [ProcessPayloadForEmpDSSSequence.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/ProcessPayloadForEmpDSSSequence.xml) and [processResponseFromEmpDSSService.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/processResponseFromEmpDSSService.xml) and add them to the registry  
 
-Add the API as per [OrganizationalInfoAPI.xml](ESB481/repository/deployment/synapse-configs/default/api/OrganizationalInfoAPI.xml)
+Create the API as per [OrganizationalInfoAPI.xml](ESB481/repository/deployment/synapse-configs/default/api/OrganizationalInfoAPI.xml)
 
 Testing 
 -------
