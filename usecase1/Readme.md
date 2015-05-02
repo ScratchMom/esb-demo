@@ -42,10 +42,13 @@ Simple Axis2 Server configuration
 2. Start Simple Axis2Server from ```<ESB_HOME>/samples/axis2Server```  
 e.g.: sh axis2server.sh
 
-*You must see the following message.*  
+*Note: You must see the following message.*  
 ```
 INFO deployment.DeploymentEngine: Deploying Web service: BackendService.aar - file:/<path_to_your_ESB_HOME>/samples/axis2Server/repository/services/BackendService.aar
 ```
+
+*Note: You can view the WSDL file from the link below to make sure that the back end service is deployed successfully.*
+[http://localhost:9000/services/BackendService?wsdl](http://localhost:9000/services/BackendService?wsdl)
 
 WSO2 Enterprise Service Bus 4.8.1 configuration
 -----------------------------------------------
