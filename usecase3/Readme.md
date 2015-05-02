@@ -15,7 +15,7 @@ Install MySQL database locally and run [script.sql](MySQL/script.sql) to create 
 
 WSO2 Data Services Server 3.2.1 Configuration
 ---------------------------------------------
-Create a datasource as follows.
+* Create a datasource as follows by referring the MySQL database.  
 
 |Attribute | Value|
 |:------------|:-------------|
@@ -27,9 +27,9 @@ Create a datasource as follows.
 |UserName | root |  
 |UserName | rootPassword |
 
-Note: Auto generate the Data service from datasource created above.
+* Auto generate the Data service from datasource created above.
 
-Sample data service configuration [EmployeesDataService.dbs](DSS321/repository/deployment/server/dataservices/EmployeesDataService.dbs) is attached for your reference only.
+Note: Sample data service configuration [EmployeesDataService.dbs](DSS321/repository/deployment/server/dataservices/EmployeesDataService.dbs) is attached for your reference only.
 
 WSO2 Identity Server 5.0.0 - Getting the access_token
 -----------------------------------------------------
@@ -56,9 +56,9 @@ e.g.: Bearer ```e3443b37211e299be2c8f3aee7f73519```
 
 WSO2 Enterprise Service Bus 4.8.1 - Configurations
 -------------------------------
-Create the two sequences as per [ProcessPayloadForEmpDSSSequence.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/ProcessPayloadForEmpDSSSequence.xml) and [processResponseFromEmpDSSService.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/processResponseFromEmpDSSService.xml) and add them to the registry  
+* Create the two sequences as per [ProcessPayloadForEmpDSSSequence.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/ProcessPayloadForEmpDSSSequence.xml) and [processResponseFromEmpDSSService.xml](ESB481/repository/deployment/synapse-configs/registry-sequences/processResponseFromEmpDSSService.xml) and add them to the registry  
 
-Create the API as per [OrganizationalInfoAPI.xml](ESB481/repository/deployment/synapse-configs/default/api/OrganizationalInfoAPI.xml)
+* Create the API as per [OrganizationalInfoAPI.xml](ESB481/repository/deployment/synapse-configs/default/api/OrganizationalInfoAPI.xml)
 
 Testing 
 -------
