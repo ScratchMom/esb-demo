@@ -64,6 +64,13 @@ refer ```Setting up WSO2 ESB``` section of [Integrating WSO2 MB with WSO2 ESB](h
 
 4. Start WSO2 ESB 4.8.1
 
+Testing 
+-------
+
+1. Open SOAP UI (or any SOAP client) and send the SOAP request as per [SOAP UI Request.xml](SOAP UI Request.xml)
+2. You must see the message sent to WSO2 MB messageQueue queue.
+3. View ESB log to understand the use case mediation flow.
+
 Usecase task flow
 -----------------
 
