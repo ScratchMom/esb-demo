@@ -24,6 +24,7 @@ Install MySQL database locally and run [script.sql](MySQL/script.sql) to create 
 WSO2 Data Services Server 3.2.1 Configuration
 ---------------------------------------------
 * Create a datasource as follows by referring the MySQL database.  
+Configure -> Data Sources -> Add Data Source
 
 |Attribute | Value|
 |:------------|:-------------|
@@ -35,7 +36,26 @@ WSO2 Data Services Server 3.2.1 Configuration
 |UserName | root |  
 |UserName | rootPassword |
 
-* Auto generate the Data service from datasource created above.
+* Auto generate the Data service from datasource created above.  
+Main -> Services -> Data Services -> Generate
+
+**Carbon Datasource Details**  
+
+|Attribute | Value|
+|:--------|:---------|
+| Carbon Datasource(s) | EmployeeDataSource |
+| Database Name | dss_sample |
+
+**Select Table(s)**
+Press Next
+
+**Select Service Generation Mode**
+Single Service
+
+|Attribute | Value|
+|:--------|:---------|
+| Data Service Namespace | http://employees.us.wso2.com |
+| Data Service Name | EmployeesDataService |
 
 Note: Sample data service configuration [EmployeesDataService.dbs](DSS321/repository/deployment/server/dataservices/EmployeesDataService.dbs) is attached for your reference only.
 
