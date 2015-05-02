@@ -42,7 +42,9 @@ WSO2 Enterprise Service Bus 4.8.1 configuration
 1. Copy the related configuration files OR  
 refer ```Setting up WSO2 ESB``` section of [Integrating WSO2 MB with WSO2 ESB](https://docs.wso2.com/display/MB220/Integrating+WSO2+ESB).
 
-2. Start WSO2 ESB 4.8.1
+2. Create the proxy as per [UC7_QueueListnerProxy.xml](ESB481/repository/deployment/server/synapse-configs/default/proxy-services/UC7_QueueListnerProxy.xml)
+
+3. Start WSO2 ESB 4.8.1
 
 Testing
 -------
