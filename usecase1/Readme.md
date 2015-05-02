@@ -34,6 +34,19 @@ Copy the [libsnappyjava.jnilib](snappy-1.1.1-Mac-x86_64/libsnappyjava.jnilib) fi
 
 5. Create queue messageQueue in WSO2 MB 2.2.0
 
+Simple Axis2 Server configuration
+---------------------------------
+
+1. Copy [BackendService.aar](Axis2Service/BackendService.aar) to ```<ESB_HOME>/samples/axis2Server/repository/services```   
+
+2. Start Simple Axis2Server from ```<ESB_HOME>/samples/axis2Server```  
+e.g.: sh axis2server.sh
+
+*You must see the following message.*  
+```
+INFO deployment.DeploymentEngine: Deploying Web service: BackendService.aar - file:/<path_to_your_ESB_HOME>/samples/axis2Server/repository/services/BackendService.aar
+```
+
 WSO2 Enterprise Service Bus 4.8.1 configuration
 -----------------------------------------------
 
