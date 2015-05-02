@@ -76,3 +76,21 @@ Sample Response received is as follows.
 ```
 {"EmployeeRecord":{"EmployeeID":14, "Status":"Successfully created"}}
 ```
+
+Usecase task flow
+-----------------
+
+**STEP 1 - Sequence 1**  
+
+1. OAuth mediator Authorization
+2. Convert payload from JSON to XML
+3. Payload Factory message xml request generation for DSS
+
+**STEP 2 - Call DSS data service**  
+
+1. DSS to query MySQL database and Insert database record and get response 
+
+**STEP 3 - Sequence 2**  
+
+1. Convert received message to customized xml format
+2. Convert payload from XML to JSON
