@@ -35,7 +35,7 @@ WSO2 Identity Server 5.0.0 - Getting the access_token
 -----------------------------------------------------
 * create a service provider
 * under inbound authentication add an application under OAuth/OpenID Connect configs sub menu
-* Save OAuth client key and OAuth client secret
+* Save OAuth client key and OAuth client secret  
 e.g.:  
 ```
 dT5XgvH7sm_ryIJXce9j281mezYa
