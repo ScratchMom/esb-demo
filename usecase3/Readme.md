@@ -46,10 +46,10 @@ Main -> Services -> Data Services -> Generate
 | Carbon Datasource(s) | EmployeeDataSource |
 | Database Name | dss_sample |
 
-**Select Table(s)**
+**Select Table(s)**  
 Press Next
 
-**Select Service Generation Mode**
+**Select Service Generation Mode**  
 Single Service
 
 |Attribute | Value|
