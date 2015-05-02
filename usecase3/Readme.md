@@ -1,5 +1,11 @@
-Use Case 3 - Instructions
-=========================
+Use Case 3
+==========
+
+In this use case a RESTful web service is hosted using OAuth authentication.  
+A request will be saved into a database and the response will be returned to the service consumer.  
+This request and response should be in JSON format.  
+
+In this scenario three WSO2 products are used, WSO2 Enterprise Service Bus (ESB) that will host the RESTful web service, WSO2 Identity Server (IS) that will manage the OAuth authentication and WSO2 Data Services Server (DSS) that will manage data services. Locally installed MySQL database will be used throughout the scenario. SOAP UI is used to send JSON requests to the REST API. The complete scenario can be tested on a single computer instance.
 
 Products used
 -------------
@@ -57,7 +63,10 @@ Single Service
 | Data Service Namespace | http://employees.us.wso2.com |
 | Data Service Name | EmployeesDataService |
 
-Note: Sample data service configuration [EmployeesDataService.dbs](DSS321/repository/deployment/server/dataservices/EmployeesDataService.dbs) is attached for your reference only.
+When you go to newly created EmployeesDataService Dashboard under operations you can see that five default operations automatically created when the data service was generated based on the data source we created earlier.  
+We can use them for our usecase without having to define new queries and operations.
+
+*Note: Sample data service configuration [EmployeesDataService.dbs](DSS321/repository/deployment/server/dataservices/EmployeesDataService.dbs) is attached for your reference only.*
 
 WSO2 Identity Server 5.0.0 - Getting the access_token
 -----------------------------------------------------
