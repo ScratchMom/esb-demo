@@ -29,6 +29,8 @@ Install MySQL database locally and run [script.sql](MySQL/script.sql) to create 
 
 WSO2 Data Services Server 3.2.1 Configuration
 ---------------------------------------------
+
+* Configure port offset as instructed above
 * Create a datasource as follows by referring the MySQL database.  
 Configure -> Data Sources -> Add Data Source
 
@@ -70,8 +72,9 @@ We can use them for our usecase without having to define new queries and operati
 
 WSO2 Identity Server 5.0.0 - Getting the access_token
 -----------------------------------------------------
-* create a service provider
-* under inbound authentication add an application under OAuth/OpenID Connect configs sub menu
+* Configure port offset as instructed above
+* Create a Service Provider
+* Under inbound authentication add an application under OAuth/OpenID Connect configs sub menu
 * Save OAuth client key and OAuth client secret  
 e.g.:  
 ```
