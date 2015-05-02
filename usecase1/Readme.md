@@ -71,6 +71,17 @@ Testing
 2. You must see the message sent to WSO2 MB messageQueue queue.
 3. View ESB log to understand the use case mediation flow.
 
+Modifying custom class mediators
+--------------------------------
+
+You can experiment with custom class mediators according to your requirements.    
+* Change [MessagePostProcessor.java](MessageProcessor/src/main/java/org/wso2/sample/mediator/MessagePostProcessor.java) or [MessagePreProcessor.java](MessageProcessor/src/main/java/org/wso2/sample/mediator/MessagePreProcessor.java) according to your needs.
+* Then go to your git checkout directory ```MessageProcessor``` and build the required jar files.  
+e.g.: mvn clean install
+
+*Note: You should have maven home configured in your system.*  
+*We recommend using maven 3.0.x*
+
 Usecase task flow
 -----------------
 
