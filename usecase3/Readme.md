@@ -3,11 +3,19 @@ Use Case 3 - Instructions
 
 Products used
 -------------
-* WSO2 Enterprise Service Bus 4.8.1   
-* WSO2 Data Services Server 3.2.1   
-* WSO2 Identity Server 5.0.0   
+* WSO2 Enterprise Service Bus (ESB) 4.8.1   
+* WSO2 Identity Server (IS) 5.0.0  
+* WSO2 Data Services Server (DSS) 3.2.1   
 * MySQL DB
 * SOAP UI
+
+| Server | Offset | URL |
+|:-------|:-------|:-------|
+| WSO2 ESB | 0 | https://localhost:9443/carbon |
+| WSO2 IS | 1 | https://localhost:9444/carbon |
+| WSO2 DSS | 10 | https://localhost:9453/carbon |
+
+You can simply change the port offset from ```<PRODUCT_HOME>/repository/conf/carbon.xml``` as follows: change the ```<Ports>``` section, ```<Offset>1</Offset>```. Once you change the carbon.xml file, start/restart the server.
 
 MySQL Database configuration
 ----------------------------
