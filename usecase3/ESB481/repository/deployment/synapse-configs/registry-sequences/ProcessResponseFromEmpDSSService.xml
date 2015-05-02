@@ -1,0 +1,10 @@
+<sequence xmlns="http://ws.apache.org/ns/synapse">
+   <log></log>
+   <payloadFactory media-type="json">
+      <format>                {"EmployeeRecord":{"EmployeeID":$1, "Status":"Successfully created"}}            </format>
+      <args>
+         <arg expression="$.GeneratedKeys.Entry.ID" evaluator="json"></arg>
+      </args>
+   </payloadFactory>
+   <property name="messageType" value="application/json" scope="axis2"></property>
+</sequence>
