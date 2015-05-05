@@ -8,4 +8,4 @@ ESB Demo
 | 3 | In this use case a RESTful web service is hosted using OAuth authentication. A request will be saved into a database and the response will be returned to the service consumer. This request and response should be in JSON format.|
 | 4 | Service is listening to a message queue and when a message arrives on the queue the service consumes it and sends to a remote web service using a username/password which is stored in a configuration file. configuration file is read once at system start and cached in memory.|
 | 6 | HTTP RESTful aweb service is hosted using transport level username/password security. It transforms JSON messages to XML and sends it to remote SOAP/HTTP service which also uses transport level username password security.|
-| 7 | A JMS messages will be dynamically routed to a destination Queue based on business rules stored.|
+| 7 | A JMS messages stored in a queue will be dynamically routed to a selected destination Queue based on business rules stored.|
