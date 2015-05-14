@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse" name="StockAPIX" context="/stockapix">
+    <resource methods="GET" uri-template="/{symbol}">
+        <inSequence>
+            <sequence key="AuthSequence"/>
+            <log level="full" description="log message"/>
+            <property name="symbol" expression="get-property('uri.var.symbol')" scope="default" type="STRING" description="preserve &quot;symbol&quot;"/>
+            <log level="custom" description="log symbol">
+                <property name="Symbol is " expression="get-property('symbol')"/>
+            </log>
+            <sequence key="BuildPayloadSequence"/>
+            <header name="Action" scope="default" value="getQuote"/>
+            <send>
+                <endpoint key="conf:endpoints/StockQuoteEndpoint.xml"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <class name="com.demo.mediators.SampleClassMediator"/>
+            <log level="custom">
+                <property name="RISK" expression="get-property('riskFactor')"/>
+            </log>
+            <log level="full" description="log message"/>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING" description="application/json"/>
+            <send/>
+        </outSequence>
+        <faultSequence>
+            <log level="custom" description="log message">
+                <property name="ALERT" value="ERROR OCCURED"/>
+            </log>
+        </faultSequence>
+    </resource>
+</api>

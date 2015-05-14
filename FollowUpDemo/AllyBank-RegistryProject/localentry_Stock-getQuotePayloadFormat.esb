@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esb:EsbDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:esb="http:///org/wso2/developerstudio/eclipse/gmf/esb">
+  <server type="LOCAL_ENTRY">
+    <children xsi:type="esb:LocalEntry" entryName="Stock-getQuotePayloadFormat" localEntryType="In-lined XML Entry" valueXML="&lt;ser:getQuote xmlns:ser=&quot;http://services.samples&quot; xmlns:xsd=&quot;http://services.samples/xsd&quot;>&#xA;        &lt;ser:request>&#xA;            &lt;xsd:symbol>$1&lt;/xsd:symbol>&#xA;        &lt;/ser:request>&#xA;    &lt;/ser:getQuote>"/>
+  </server>
+</esb:EsbDiagram>

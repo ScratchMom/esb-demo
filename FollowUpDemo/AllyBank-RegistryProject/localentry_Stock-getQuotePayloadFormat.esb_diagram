@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/developerstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_9yLVAO75EeSRA9ZnWVOV4A" type="Esb" name="localentry_Stock-getQuotePayloadFormat.esb_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_90AhAO75EeSRA9ZnWVOV4A" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_90BIEO75EeSRA9ZnWVOV4A" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_939z8O75EeSRA9ZnWVOV4A" type="3663">
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_939z8e75EeSRA9ZnWVOV4A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_939z8u75EeSRA9ZnWVOV4A" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_939z8-75EeSRA9ZnWVOV4A"/>
+        <element xmi:type="esb:LocalEntry" href="localentry_Stock-getQuotePayloadFormat.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_939z9O75EeSRA9ZnWVOV4A" width="75" height="75"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_90AhAe75EeSRA9ZnWVOV4A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_90AhAu75EeSRA9ZnWVOV4A" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_90AhA-75EeSRA9ZnWVOV4A"/>
+    <element xmi:type="esb:EsbServer" href="localentry_Stock-getQuotePayloadFormat.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_90AhBO75EeSRA9ZnWVOV4A"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_9yLVAe75EeSRA9ZnWVOV4A"/>
+  <element xmi:type="esb:EsbDiagram" href="localentry_Stock-getQuotePayloadFormat.esb#/"/>
+</notation:Diagram>

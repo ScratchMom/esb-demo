@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="StockQuoteEndpoint" groupId="com.example.AllyBank-RegistryProject.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>StockQuoteEndpoint.xml</file>
+            <path>/_system/config/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="Stock-getQuotePayload_xml" groupId="com.example.AllyBank-RegistryProject.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>Stock-getQuotePayload.xml</file>
+            <path>/_system/governance/custom</path>
+            <mediaType>application/xml</mediaType>
+        </item>
+    </artifact>
+</artifacts>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="AuthSequence">
+    <oauthService remoteServiceUrl="https://192.168.56.101:9463/services/" username="admin" password="admin"/>
+</sequence>

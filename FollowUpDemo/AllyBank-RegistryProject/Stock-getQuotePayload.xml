@@ -1,0 +1,5 @@
+<ser:getQuote xmlns:ser="http://services.samples" xmlns:xsd="http://services.samples/xsd">
+	<ser:request>
+		<xsd:symbol>$1</xsd:symbol>
+	</ser:request>
+</ser:getQuote>

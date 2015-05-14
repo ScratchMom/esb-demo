@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="BuildPayloadSequence">
+    <payloadFactory media-type="xml">
+        <format key="gov:custom/Stock-getQuotePayload.xml"/>
+        <args>
+            <arg evaluator="xml" expression="get-property('symbol')"/>
+        </args>
+    </payloadFactory>
+    <log level="full" description="log outbound message"/>
+</sequence>
